@@ -1,10 +1,5 @@
 \c cta_dev;
 
-INSERT INTO test (name) VALUES
-('Monday'),
-('Tuesday'),
-('Wednesday'),
-('Thursday'),
-('Friday'),
-('Saturday'),
-('Sunday');
+INSERT INTO holistics (name, description, price, rating, featured) VALUES
+('oud', 'candle', 35, 5, true),
+('frankinsence', 'insence', 15, 5, true)

@@ -5,13 +5,17 @@ const express = require("express");
 // CONFIGURATION
 const app = express();
 
+const holisticsController = require("./controllers/holisticsController");
+
 // MIDDLEWARE
 app.use(cors());
 app.use(express.json()); // Parse incoming JSON
+app.use("/holistics", holisticsController);
 
 // ROUTES
 app.get("/", (req, res) => {
   res.send("Hello, world!");
+  console.log(res);
 });
 
 /////////////////////////////////////

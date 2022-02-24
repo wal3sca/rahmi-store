@@ -1,41 +1,40 @@
-import React from "react";
+import { Nav } from "react-bootstrap";
+import img from "../../src/assets/RAHMILOGO.png";
 
-export default function Nav() {
+const NavBar = () => {
   return (
-    <nav className="navbar navbar-inverse">
-      <div className="container-fluid">
-        <div className="navbar-header">
-          <a className="navbar-brand" href="#">
-            RahMi
-          </a>
-        </div>
-        <ul className="nav navbar-nav">
-          <li className="active">
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">Shop</a>
-          </li>
-        </ul>
-        <ul className="nav navbar-nav navbar-right">
-          <li>
-            <a href="#">
-              <span className="glyphicon glyphicon-user"></span> Sign Up
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span className="glyphicon glyphicon-log-in"></span> Login
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <Nav
+      activeKey="/"
+      onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+      justify="true"
+    >
+      <Nav.Item>
+        <Nav.Link href="/">
+          <img src={img} className="w-100" />
+        </Nav.Link>
+      </Nav.Item>
+
+      <Nav.Item>
+        <Nav.Link href="/">Home</Nav.Link>
+      </Nav.Item>
+
+      <Nav.Item>
+        <Nav.Link href="/holistics/about">About</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/holistics/services">Services</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/holistics/shop">Shop</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/holistics/signup">Sign Up</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="/holistics/login">Login</Nav.Link>
+      </Nav.Item>
+    </Nav>
   );
-}
+};
+
+export default NavBar;

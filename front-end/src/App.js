@@ -1,38 +1,32 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React from "react";
-
-// PAGES
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Services from "./Pages/Services";
-import Shop from "./Pages/Shop";
-import SignUp from "./Pages/SignUp";
-import Login from "./Pages/Login";
-
-// COMPONENTS
-import Nav from "./components/Nav";
-import Hero from "./components/Hero";
-
-const API = process.env.REACT_APP_API_URL;
-console.log(API);
+import Index from "./Pages/Index";
+import Show from "./Pages/Show";
+import Edit from "./Pages/Edit";
+import Home from "./Components/Home";
+import NavBar from "./Components/NavBar";
+import Contact from "./Components/Contact";
+import About from "./Components/About";
+import Footer from "./Components/Footer";
+import Cart from "./Components/Cart";
+import SignUp from "./Components/SignUp";
+import Login from "./Components/Login";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App min-vh-100">
-      <Nav />
-      <Hero />
-      <Router>
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/holistics/about" element={<About />} />
-            <Route path="/holistics/services" element={<Services />} />
-            <Route exact path="/holistics/:index/shop" element={<Shop />} />
-            <Route exact path="/holistics/signup" element={<SignUp />} />
-            <Route exact path="/holistics/login" element={<Login />} />
-          </Routes>
-        </main>
-      </Router>
+    <div className="App">
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/holistics" element={<Index />} />
+        <Route path="/holistics/:id" element={<Show />} />
+        <Route path="/holistics/:id/edit" element={<Edit />} />
+        <Route path="/holistics/:id/signup" element={<SignUp />} />
+        <Route path="/holistics/:id/login" element={<Login />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
